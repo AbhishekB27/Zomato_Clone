@@ -27,6 +27,9 @@
 .hero-section-navItems{
   display: flex;
   gap:40px;
+  transition: all;
+  transition-duration: 500ms;
+
 }
 .hero-section-navBar a{
   color: white;
@@ -111,6 +114,9 @@ color: black;
   display: none;
   font-size: 30px;
 }
+#check{
+  display: none;
+}
 @media only screen and (max-width:992px) {
   .hero-section-getApp{
     display: none;
@@ -119,8 +125,17 @@ color: black;
   .hero-section-navItems{
     background-color: rgba(0,0,0,.9);
     color: black;
-    display: none;
+    /* display: none; */
+    height: 0px;
+    overflow: hidden;
     flex-direction:column;
+    position: absolute;
+    padding: 0;
+    top: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .hero-section-navItems a{
     color: white;
@@ -141,16 +156,18 @@ color: black;
     position: relative;
     padding: 0;
   }
-  .hero-seciton-hamburger:hover ~ .hero-section-navItems{
+ 
+  #check:checked ~ .hero-section-navItems{
     position: absolute;
     padding: 0;
     top: 45px;
     width: 100%;
-    height: calc(100vh - 45px);
+    height:calc(100vh - 45px);
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .zomato-heading{
     visibility: hidden;
     font-size:30px;
